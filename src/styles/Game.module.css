@@ -1,0 +1,119 @@
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #faf8ef;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2%;
+  background-color: #bbada0;
+  padding: 2%;
+  border-radius: 8px;
+  width: min(95vw, 95vh);
+  max-width: 600px;
+  aspect-ratio: 1;
+}
+
+.cell {
+  background-color: #cdc1b4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 3px;
+  color: #776e65;
+  aspect-ratio: 1;
+  font-size: min(6vw, 6vh);
+  transition: all 0.1s ease-in-out;
+}
+
+.scoreContainer {
+  font-size: min(5vw, 24px);
+  margin: 20px 0;
+  color: #776e65;
+  text-align: center;
+}
+
+.gameOver {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(238, 228, 218, 0.73);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.button {
+  background-color: #8f7a66;
+  color: #f9f6f2;
+  border: none;
+  padding: min(3vw, 20px) min(5vw, 30px);
+  font-size: min(4vw, 24px);
+  border-radius: 3px;
+  margin: 10px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 数字块的颜色样式 */
+.value2 { background-color: #eee4da; }
+.value4 { background-color: #ede0c8; }
+.value8 { background-color: #f2b179; color: #f9f6f2; }
+.value16 { background-color: #f59563; color: #f9f6f2; }
+.value32 { background-color: #f67c5f; color: #f9f6f2; }
+.value64 { background-color: #f65e3b; color: #f9f6f2; }
+.value128 { 
+  background-color: #edcf72; 
+  color: #f9f6f2; 
+  font-size: min(5vw, 5vh); 
+}
+.value256 { 
+  background-color: #edcc61; 
+  color: #f9f6f2; 
+  font-size: min(5vw, 5vh); 
+}
+.value512 { 
+  background-color: #edc850; 
+  color: #f9f6f2; 
+  font-size: min(5vw, 5vh); 
+}
+.value1024 { 
+  background-color: #edc53f; 
+  color: #f9f6f2; 
+  font-size: min(4vw, 4vh); 
+}
+.value2048 { 
+  background-color: #edc22e; 
+  color: #f9f6f2; 
+  font-size: min(4vw, 4vh); 
+}
+
+@media (max-width: 480px) {
+  .cell {
+    font-size: 7vw;
+  }
+  
+  .value128,
+  .value256,
+  .value512 {
+    font-size: 6vw;
+  }
+  
+  .value1024,
+  .value2048 {
+    font-size: 5vw;
+  }
+} 
