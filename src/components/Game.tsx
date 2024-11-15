@@ -90,6 +90,19 @@ export default function Game() {
     e.preventDefault();
   };
 
+  const handleMove = (direction: string) => {
+    if (gameOver) return;
+
+    const { newGrid, newScore, moved } = move(grid, score, direction);
+    if (moved) {
+      setGrid(newGrid);
+      setScore(newScore);
+      if (isGameOver(newGrid)) {
+        setGameOver(true);
+      }
+    }
+  };
+
   const resetGame = () => {
     const newGrid = initGrid();
     setGrid(newGrid);
@@ -107,6 +120,14 @@ export default function Game() {
       <div className={styles.scoreContainer}>Score: {score}</div>
       <Grid grid={grid} />
       {gameOver && <GameOver onReset={resetGame} />}
+      <div className={styles.controlButtons}>
+        <button onClick={() => handleMove('ArrowUp')} className={styles.button}>↑</button>
+        <div className={styles.buttonRow}>
+          <button onClick={() => handleMove('ArrowLeft')} className={styles.button}>←</button>
+          <button onClick={() => handleMove('ArrowDown')} className={styles.button}>↓</button>
+          <button onClick={() => handleMove('ArrowRight')} className={styles.button}>→</button>
+        </div>
+      </div>
     </div>
   );
-} 
+}
