@@ -2,9 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  align-content: center;
   height: 100vh;
   padding: 20px;
+  width: 90%; /* 设置宽度为 80% */
+  
 }
 
 .scoreContainer {
@@ -14,14 +17,14 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 100px);
+  grid-template-columns: repeat(4, 80px);
   gap: 10px;
   margin-bottom: 20px;
 }
 
 .cell {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background-color: #bbada0;
   color: #776e65;
   display: flex;
